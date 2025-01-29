@@ -14,13 +14,13 @@ public class loopsReview {
                 System.out.println("Invalid! Must be between 0 and 110");
             }
             else if (grade >= 0){
-                calculateGrade(grade);
                 sum += grade;
                 count++;
             }
             System.out.println("Count is " + count + ", Sum is " + sum);
         }
         System.out.println("The average of your grades is: " + (sum / count));
+        calculateGrade(sum / count);
 
     }
     public static void calculateGrade(double grade) {
