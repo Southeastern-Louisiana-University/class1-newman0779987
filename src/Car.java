@@ -70,24 +70,41 @@ public class Car {
     public void setGasUsed(double gasUsed){this.gasUsed = gasUsed;}
 
 
-    public void printFields(){
-        System.out.println("Make: " + this.getMake());
-        System.out.println("Model: " + this.getModel());
-        System.out.println("Year: " + this.getYear());
-        System.out.println("Mileage: " + this.getMileage());
+    /*
+        toString() makes this method redundant. Left in for observation.
+     */
 
-        System.out.println("Price: $" + this.getPrice());
-        System.out.println("Gallons of Gas Used: " + this.getGasUsed());
-        System.out.println("Gas Mileage: " + this.getGasMileage());
-    }
+//    public void printFields(){
+//        System.out.println("Make: " + this.getMake());
+//        System.out.println("Model: " + this.getModel());
+//        System.out.println("Year: " + this.getYear());
+//        System.out.println("Mileage: " + this.getMileage());
+//
+//        System.out.println("Price: $" + this.getPrice());
+//        System.out.println("Gallons of Gas Used: " + this.getGasUsed());
+//        System.out.println("Gas Mileage: " + this.getGasMileage());
+//    }
 
     public static void main(String[] args){
         Car vehicle1 = new Car("Nissan","Rogue",2024,1300);
-        vehicle1.printFields();
+        //vehicle1.printFields();
         vehicle1.drive(50);
 
         Car vehicle2 = new Car("Ford","F-150",2023,5000, 35000, 200);
-        vehicle2.printFields();
+        //vehicle2.printFields();
         vehicle2.drive(60);
+
+        System.out.println(vehicle1.toString());
+        System.out.println(vehicle2.toString());
     }
+    public String toString(){
+        return "Make: " + this.make
+                + "\nModel: " + this.model
+                + "\nYear: " + this.year
+                + "\nMileage: " + this.mileage
+                + (this.getPrice() > 0 ? "\nPrice: $" + this.price : " ")
+                + (this.getGasUsed() > 0 ? "\nGallons of Gas Used: " + this.gasUsed : " ")
+                + (this.getGasMileage() > 0 ? "\nGas Mileage: " + this.gasMileage : " ");
+    }
+
 }
